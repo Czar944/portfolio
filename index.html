@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Czar Aian Judilla | Portfolio Slides</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" data-slide="0">About Me</a></li>
+        <li><a href="#" data-slide="1">Skills</a></li>
+        <li><a href="#" data-slide="2">Projects</a></li>
+        <li><a href="#" data-slide="3">Contact</a></li>
+        <li class="sidebar-divider"></li>
+        <li class="sidebar-toggle-item">
+          <label class="toggle-switch">
+            <input type="checkbox" id="themeSwitch">
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Dark Mode</span>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Toggle Button -->
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <header class="header">
+    <h1>Czar Aian Judilla</h1>
+    <p>Student</p>
+  </header>
+
+  <main class="slider">
+    <!-- About Me Slide -->
+    <div class="slide-group active">
+      <section class="slide" id="about">
+        <h2>About Me</h2>
+        <p>I'm a Student from STI Ormoc City. I enjoy learning new technologies and tackling challenging problems.</p>
+      </section>
+      <div class="photo-container card-style">
+        <img src="50f1d9e0-1cda-4fe0-b03a-bc315aa01daa.jpg" alt="Czar Aian Judilla" class="profile-photo" />
+      </div>
+    </div>
+  
+    <!-- Skills Slide -->
+    <div class="slide-group">
+      <section class="slide" id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>JavaScript, TypeScript</li>
+          <li>React, Next.js</li>
+          <li>Node.js, Express</li>
+          <li>SQL, MongoDB</li>
+          <li>C#, .NET</li>
+        </ul>
+      </section>
+      <div class="photo-container card-style">
+        <img src="50f1d9e0-1cda-4fe0-b03a-bc315aa01daa.jpg" alt="Skills Visual" class="profile-photo" />
+      </div>
+    </div>
+    
+    <!-- Projects Slide -->
+    <div class="slide-group">
+      <section class="slide" id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Word Guess App:</strong> A fun guessing game using Windows Forms and StringBuilder.</li>
+          <li><strong>Tax & Compliance Dashboard:</strong> A responsive dashboard with tax logic and chart visuals.</li>
+          <li><strong>Student Registration App:</strong> Includes photo upload and overloaded method usage.</li>
+        </ul>
+      </section>
+      <div class="photo-container card-style">
+        <img src="50f1d9e0-1cda-4fe0-b03a-bc315aa01daa.jpg" alt="Projects Visual" class="profile-photo" />
+      </div>
+    </div>
+  
+    <!-- Contact Slide -->
+    <div class="slide-group">
+      <section class="slide" id="contact">
+        <h2>Contact</h2>
+        <p><strong>Email:</strong> czar.aian@email.com</p>
+        <p><strong>Contact Number:</strong> 09380350682</p>
+        <p><strong>Address:</strong> Mahaba II, Brgy. San Jose, Ormoc City</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/czaraian" target="_blank">github.com/czaraian</a></p>
+      </section>
+      <div class="photo-container card-style">
+        <img src="50f1d9e0-1cda-4fe0-b03a-bc315aa01daa.jpg" alt="Contact Visual" class="profile-photo" />
+      </div>
+    </div>
+  </main>  
+
+  <div class="nav-buttons">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <footer class="footer">
+    © 2025 Czar Aian Judilla. All rights reserved.
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

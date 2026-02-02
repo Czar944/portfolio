@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f2fe, #ffffff, #e0f2fe);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+body.sidebar-open {
+  margin-left: 250px;
+}
+
+/* HEADER FIX */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* SLIDER FIX */
+.slider {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* FIX ALIGNMENT */
+.slide-group {
+  display: none;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-group.active {
+  display: flex;
+}
+
+/* LEFT CARD */
+.slide {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  width: 550px;
+}
+
+/* RIGHT IMAGE CARD */
+.card-style {
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* NAV BUTTONS FIX */
+.nav-buttons {
+  margin-top: 30px;
+}
+
+.nav-buttons button {
+  padding: 12px 25px;
+  margin: 0 10px;
+  font-weight: bold;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.nav-buttons button:hover {
+  background-color: #1e3a8a;
+}
+
+/* FOOTER FIX */
+.footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #000;
+  text-align: center;
+}
+
+/* SWITCH FIX – move out of layout */
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* --- FIXED POSITION FOR CLEAN UI --- */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.simple-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+/* Hide checkbox */
+.simple-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider box */
+.simple-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 22px;
+  transition: 0.2s;
+}
+
+/* Toggle circle */
+.simple-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+/* Checked State */
+.simple-switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+
+
+/* SIDEBAR STYLES */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 20px 20px 20px;
+  transition: left 0.3s ease;
+  z-index: 998;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Divider */
+.sidebar-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 15px 0 !important;
+  border: none;
+}
+
+/* Sidebar Toggle Item */
+.sidebar-toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  margin: 20px 0 !important;
+}
+
+.sidebar-toggle-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-label {
+  color: white;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+#themeSwitch:checked + .toggle-slider {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#themeSwitch:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* SIDEBAR TOGGLE BUTTON */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: #667eea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: #764ba2;
+}
+
+.sidebar-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.sidebar-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.sidebar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DARK MODE STYLES */
+body.dark-mode {
+  background: linear-gradient(to right, #1a1a2e, #16213e, #1a1a2e);
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #0f3460;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header h1,
+body.dark-mode .header p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .slide {
+  background: #0f3460;
+  color: #e0e0e0;
+}
+
+body.dark-mode .slide h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .card-style {
+  background: #0f3460;
+}
+
+body.dark-mode .nav-buttons button {
+  background-color: #5f8ec8;
+}
+
+body.dark-mode .nav-buttons button:hover {
+  background-color: #4a6ba8;
+}
+
+body.dark-mode .footer {
+  color: #e0e0e0;
+}
